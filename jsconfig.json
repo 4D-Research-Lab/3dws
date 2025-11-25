@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "$/*": ["./*"],
+      "$components/*": ["components/*"],
+      "$styles/*": ["styles/*"],
+      "$api/*": ["api/*"],
+      "$context/*": ["context/*"],
+      "$hooks/*": ["hooks/*"],
+      "$utils/*": ["utils/*"],
+      "$firebase": ["firebase.js"],
+      "$pages": ["pages/*"],
+      "$config": ["appConfig.js"]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "3dworkspace",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "lint": "next lint",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "firebase": "^10.12.2",
+    "firebase-admin": "^12.6.0",
+    "fuse.js": "^7.0.0",
+    "lodash.isequal": "^4.5.0",
+    "next": "^14.2.4",
+    "nookies": "^2.5.2",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.2",
+    "react-dom": "^18.3.1",
+    "react-firebase-hooks": "^5.0.3",
+    "react-icons": "^4.3.1",
+    "react-select": "^5.3.2"
+  },
+  "devDependencies": {
+    "eslint": "8.13.0",
+    "eslint-config-next": "^14.2.4",
+    "prettier": "^3.2.5"
+  }
+}
