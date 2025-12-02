@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import { Row, Col, Button } from 'react-bootstrap';
 import { signOut } from 'firebase/auth';
 import { useAuth } from '$context/AuthContext';
@@ -6,6 +5,7 @@ import { auth } from '$firebase';
 
 export default function Account() {
 
+  //sends SignOut request to Firebase. Then refreshes the website.
   const handleSignout = () => {
     signOut(auth);
     window.location.href = '/';
@@ -16,12 +16,14 @@ export default function Account() {
     <>
       {displayName && (
         <Row>
+          {/*displays name and email */}
           <Col className="account">
             <h3>Name </h3>
             {displayName}
             <h3> Email </h3>
             {email}
             <div className="spacing"></div>
+          {/*signout button, triggers above function*/}
             <Button onClick={handleSignout}>Sign Out</Button>
           </Col>
         </Row>

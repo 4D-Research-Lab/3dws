@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useMemo} from 'react';
+import React, { useState, useRef, useMemo} from 'react';
 import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap';
 import TabCollectionDescription from '$components/collection/TabCollectionDescription';
 import TabNotes from '$components/collection/TabNotes';
@@ -25,15 +25,17 @@ export default function CollectionPage() {
   const isUserCollectionOwner = useMemo(() => collectionDescription.creator?.toLowerCase() === displayName?.toLowerCase(), [collectionDescription, displayName]);
 
   // show all models in the collection without pagination
-  // This is not ideal but necessary to enable interacting with models via the Learning Pathway tab
+  // This is not ideal but necessary to enable interacting with models via the Learning Pathway tab - since Voyager is not reactive
   // furthermore the tours of the models can only be accessed after the models were loaded in the Voyager explorer.
   const modelsPerPage = 999;
   const { models } = useModels(collectionModelsFilenames, modelsPerPage);
 
+  //when voyager components are ready, learning pathway tab is activated
   function handleIsVoyagerGroupReady() {
     setIsVoyagerGroupReady(true);
   };
 
+  //on adding/removing models, collection is refreshed
   function handleCollectionUpdated() {
     refetchCollection();
   };

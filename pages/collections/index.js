@@ -100,7 +100,7 @@ export default function Page() {
               </ModalContainer>
             )}
 
-            {/* Search input with debounce */}
+            {/* Search input with debounce (the microdelay that prevents searching after every single input character) */}
             <label htmlFor="searchCollectionsInput">Search Collections</label>
             <i className="mt-1 small">Search through titles and descriptions</i>
             <InputText
