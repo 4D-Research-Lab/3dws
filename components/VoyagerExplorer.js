@@ -16,13 +16,18 @@ const VoyagerExplorer = forwardRef(
     { id, root, model, uimode, quality, onModelLoaded = null, ...rest },
     ref
   ) => {
-const { filename, data } = model;
+    const { filename: document, data } = model;
     const explorerRef = useRef(null);
 const [isHydrated, setIsHydrated] = useState(false);
 
 useEffect(() => {
       setIsHydrated(true);
     }, []);
+        useEffect(() => {
+if (isHydrated && explorerRef.current && data) {
+        explorerRef.current.loadDocument(data);
+      }
+    }, [isHydrated, data]);
 
     useImperativeHandle(
       ref,
@@ -66,13 +71,15 @@ useEffect(() => {
       <voyager-explorer
         ref={explorerRef}
         id={id}
-document={data ? JSON.stringify(data) : filename}
+        document={document}
         root={root}
         uimode={uimode}
         quality={quality}
         {...rest}
       />
     );
+
+
   }
 );
 
