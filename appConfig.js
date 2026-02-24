@@ -1,5 +1,5 @@
 export const MODELS_REPOSITORY_URL =
-  'https://voyager-data.create.humanities.uva.nl/';
+  'https://4dresearchlab.nl/3Dworkspace/Data/';
 export const MODELS_PER_PAGE = 6;
 export const COLLECTIONS_PER_PAGE = 10;
 export const MODEL_PREVIEW_QUALITY = 'Thumb';
