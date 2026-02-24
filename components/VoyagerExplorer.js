@@ -3,17 +3,26 @@
 import React, {
   useEffect,
   useRef,
+  useState,
   useImperativeHandle,
   forwardRef,
 } from 'react';
+
+
+
 
 const VoyagerExplorer = forwardRef(
   (
     { id, root, model, uimode, quality, onModelLoaded = null, ...rest },
     ref
   ) => {
-    const { filename: document } = model;
+const { filename, data } = model;
     const explorerRef = useRef(null);
+const [isHydrated, setIsHydrated] = useState(false);
+
+useEffect(() => {
+      setIsHydrated(true);
+    }, []);
 
     useImperativeHandle(
       ref,
@@ -51,11 +60,13 @@ const VoyagerExplorer = forwardRef(
       }
     }, [onModelLoaded]);
 
+    if (!isHydrated) return null;
+
     return (
       <voyager-explorer
         ref={explorerRef}
         id={id}
-        document={document}
+document={data ? JSON.stringify(data) : filename}
         root={root}
         uimode={uimode}
         quality={quality}
