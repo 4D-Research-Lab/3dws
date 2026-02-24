@@ -17,6 +17,7 @@ export default function useModels(filterModelsFilenames = null, modelsPerPage=MO
       ? findContextModels(filterModelsFilenames)
       : contextModels;
   }, [contextModels, filterModelsFilenames]);
+  console.log("ALL MODELS:", allModels);
 
   const fuse = useFuseSearch(allModels, FUSE_SEARCH_CONFIG);
   const [searchInput, setSearchInput] = useState('');
