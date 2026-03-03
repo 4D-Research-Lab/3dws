@@ -1,3 +1,6 @@
+## Important notes
+Do not post necessary configuration in files on github, but add these in Vercel, using /3dws/settings/environment-variables.
+
 ## 3DWorkSpace — copilot-oriented developer guide
 
 This document is written for GitHub Copilot agents and human developers who need to understand, extend, or automate tasks in the `3dws-client` Next.js application.
